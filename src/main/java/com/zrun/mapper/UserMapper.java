@@ -5,6 +5,7 @@ import com.zrun.common.Result;
 import com.zrun.model.User;
 import org.apache.ibatis.annotations.Insert;
 import com.zrun.pojo.User;
+import com.jyall.pojo.User;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
