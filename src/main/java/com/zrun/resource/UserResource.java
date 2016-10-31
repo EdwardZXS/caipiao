@@ -1,7 +1,7 @@
 package com.zrun.resource;
 
-import com.jyall.pojo.User;
-import com.jyall.service.UserService;
+import com.zrun.pojo.User;
+import com.zrun.service.UserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -36,8 +36,7 @@ public class UserResource {
     @ResponseBody
     public User getUserById(@PathVariable @ApiParam(value = "用户ID") String id){
         User user = new User();
-        user.setId(id);
-        user.setName("小小");
+        user = userService.getUserById(id);
         return user;
     }
 
