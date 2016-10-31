@@ -14,7 +14,7 @@
 	</appender>
 
 	<appender name="sysDailyRollingFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
-		<file>/data/demologs/sys.log</file>
+		<file>/dat	a/demologs/sys.log</file>
 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
 			<!-- daily rollover -->
 			<fileNamePattern>/data/logs/bootdemo-%d{yyyyMMdd}.log</fileNamePattern>

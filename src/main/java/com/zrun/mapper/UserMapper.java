@@ -1,6 +1,6 @@
 package com.zrun.mapper;
 
-import com.jyall.pojo.User;
+import com.zrun.pojo.User;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 

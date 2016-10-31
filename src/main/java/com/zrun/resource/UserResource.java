@@ -1,7 +1,7 @@
 package com.zrun.resource;
 
-import com.jyall.pojo.User;
-import com.jyall.service.UserService;
+import com.zrun.pojo.User;
+import com.zrun.service.UserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;

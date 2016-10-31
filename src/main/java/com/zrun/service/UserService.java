@@ -1,7 +1,7 @@
 package com.zrun.service;
 
-import com.jyall.mapper.UserMapper;
-import com.jyall.pojo.User;
+import com.zrun.mapper.UserMapper;
+import com.zrun.pojo.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
