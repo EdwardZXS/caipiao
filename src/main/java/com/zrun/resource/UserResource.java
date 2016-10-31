@@ -1,7 +1,8 @@
 package com.zrun.resource;
 
-import com.jyall.pojo.User;
-import com.jyall.service.UserService;
+import com.zrun.common.Result;
+import com.zrun.model.User;
+import com.zrun.service.UserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -52,18 +53,21 @@ public class UserResource {
             return null;
         }
     }
-    @RequestMapping("/addUser")
-    @ApiOperation(value = "添加新的用户",notes = "添加新的用户",httpMethod = "POST",response = Result.class)
+
+    @RequestMapping(value = "/addUser",method = RequestMethod.POST)
+    @ApiOperation(value = "添加新的用户", notes = "添加新的用户", httpMethod = "POST", response = Result.class)
     @ResponseBody
-    public Result saveUser(@ApiParam(value = "新增用户") User user) {
-        System.out.println(user.getId());
+    public Result saveUser(@ApiParam(value = "新增用户") User user, @ApiParam("") String name,@ApiParam("") String id, @ApiParam("")String age) {
+        user.setId(id);
+        user.setAge(age);
+        user.setName(name);
         Result result = new Result();
-        if(StringUtils.isEmpty(user.getId())) {// 如果为空
+        if (StringUtils.isEmpty(user.getId())) {// 如果为空
             result = userService.saveUser(user);
-            return  result;
-        }else {
+            return result;
+        } else {
             result.setData("id已存在,转到更改环节");
-            return  result;
+            return result;
         }
     }
 }
