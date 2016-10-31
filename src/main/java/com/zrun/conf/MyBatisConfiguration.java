@@ -1,4 +1,4 @@
-package com.zrun;
+package com.zrun.conf;
 
 import com.github.pagehelper.PageHelper;
 import org.springframework.context.annotation.Bean;
