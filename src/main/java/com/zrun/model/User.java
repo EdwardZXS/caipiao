@@ -1,4 +1,4 @@
-package com.zrun.pojo;
+package com.zrun.model;
 
 /**
  * Created by Edward on 2016/10/21.

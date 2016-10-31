@@ -64,7 +64,7 @@
 		<!--</filter> -->
 	<!--</appender>-->
 	
-	<logger name="com.jyall" level="DEBUG">
+	<logger name="com.zrun" level="DEBUG">
 		<appender-ref ref="sysDailyRollingFile" />
 	</logger>
 

@@ -1,7 +1,7 @@
 package com.zrun.resource;
 
-import com.zrun.pojo.User;
-import com.zrun.service.UserService;
+import com.jyall.pojo.User;
+import com.jyall.service.UserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -9,6 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -36,8 +37,7 @@ public class UserResource {
     @ResponseBody
     public User getUserById(@PathVariable @ApiParam(value = "用户ID") String id){
         User user = new User();
-        user.setId(id);
-        user.setName("小小");
+        user = userService.getUserById(id);
         return user;
     }
 
@@ -52,5 +52,18 @@ public class UserResource {
             return null;
         }
     }
-
+    @RequestMapping("/addUser")
+    @ApiOperation(value = "添加新的用户",notes = "添加新的用户",httpMethod = "POST",response = Result.class)
+    @ResponseBody
+    public Result saveUser(@ApiParam(value = "新增用户") User user) {
+        System.out.println(user.getId());
+        Result result = new Result();
+        if(StringUtils.isEmpty(user.getId())) {// 如果为空
+            result = userService.saveUser(user);
+            return  result;
+        }else {
+            result.setData("id已存在,转到更改环节");
+            return  result;
+        }
+    }
 }
